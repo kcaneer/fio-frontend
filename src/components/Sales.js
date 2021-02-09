@@ -8,10 +8,10 @@ export default function Sales() {
   const [details, setDetails] = useState();
   const [customer, setCustomer] = useState("");
   const [item, setItem] = useState("");
-
+  const url = "https://big-turkey-53.loca.lt";
   useEffect(() => {
     axios
-      .get("https://fluffy-fish-51.loca.lt/api/details")
+      .get(url + "/api/details")
       .then((response) => {
         setDetails(response.data);
         setLoading(false);
@@ -41,7 +41,15 @@ console.log(details)
   // exportFromJSON({ data, fileName, exportType });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        Loading...
+        <a className="btn btn-warning" href={url} target="_blank">
+          If this app takes more then 10 seconds to load, visit this link, press
+          the blue "Continue" button, then refresh this page.
+        </a>
+      </div>
+    );
   }
   return (
     <div className="row text-center d-block pb-2 ml-5 mr-5 rounded">
