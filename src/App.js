@@ -1,7 +1,6 @@
 import React from "react";
 // import "./App.css";
 import Sales from "./components/Sales";
-
 function App() {
   return (
     <div className="container-fluid">
