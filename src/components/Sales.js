@@ -44,7 +44,7 @@ console.log(details)
     return (
       <div>
         Loading...
-        <a className="btn btn-warning" href={url} target="_blank">
+        <a className="btn btn-warning" href={url} target="_blank" rel="noreferrer">
           If this app takes more then 10 seconds to load, visit this link, press
           the blue "Continue" button, then refresh this page.
         </a>
