@@ -8,12 +8,12 @@ export default function Sales() {
   const [details, setDetails] = useState();
   const [customer, setCustomer] = useState("");
   const [item, setItem] = useState("");
-  const url = "https://kind-pig-39.loca.lt";
+  
   useEffect(() => {
     axios
-      .get(url + "/api/details")
+      .get("https://cryptic-mesa-56439.herokuapp.com/api/details")
       .then((response) => {
-        setDetails(response.data);
+        setDetails(response.data.recordset);
         setLoading(false);
       });
   }, []);
@@ -32,7 +32,8 @@ export default function Sales() {
       return details.items_ordered.toLowerCase().includes(item.toLowerCase());
     });
   }
-console.log(details)
+
+console.log(filteredSales)
 
   const data = details;
   const fileName = "download";
@@ -44,10 +45,6 @@ console.log(details)
     return (
       <div>
         Loading...
-        <a className="btn btn-warning" href={url} target="_blank" rel="noreferrer">
-          If this app takes more then 10 seconds to load, visit this link, press
-          the blue "Continue" button, then refresh this page.
-        </a>
       </div>
     );
   }
