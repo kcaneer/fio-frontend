@@ -8,7 +8,7 @@ export default function Sales() {
   const [details, setDetails] = useState();
   const [customer, setCustomer] = useState("");
   const [item, setItem] = useState("");
-  const url = "https://big-turkey-53.loca.lt";
+  const url = "https://kind-pig-39.loca.lt";
   useEffect(() => {
     axios
       .get(url + "/api/details")
